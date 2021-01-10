@@ -1,12 +1,10 @@
 # run-aspnet-core-app-in-kubernetes
 
-The sample to run AspNet Core application in [Kubenetes](https://kubernetes.io/).
+Sample to run AspNet Core application in [Kubenetes](https://kubernetes.io/). The sample uses kubernetes cluster installed by Docker Desktop on the local machine.
 
-The sample uses a kubernetes cluster installed by Docker Desktop on the local machine.
+Application is accessible from host machine via a [NodePort Service](https://kubernetes.io/docs/concepts/services-networking/service/) definition. In a production, an [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) controller would be helpfull to serve your application to outside of the cluster. You should consider that, a load balancer is also required to configure a appropriate environment. Those consepts are out of scope for this sample.  
 
-The application is accessible from the host machine via a `NodePort` [Service](https://kubernetes.io/docs/concepts/services-networking/service/) definition. In a production, An [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) controller would be helpfull to serve your application to outside of the cluster. You should consider that a load balancer is also required to configure a appropriate environment. Those consepts are out of scope for this sample.  
-
-For this sample an image registry also required. Kubernetes needs to pull application images from a image registry to create the container and place it in a [Pod](https://kubernetes.io/docs/concepts/workloads/pods/). Indeed, we could use docker's public hub to pull a sample AspNetCore image. We want to make you more familier with what a image registry is. So we create a sample "private image resitry" in the docker.
+For this sample, an image registry also required. Kubernetes needs to pull application images from an image registry to create the container and place it in a [Pod](https://kubernetes.io/docs/concepts/workloads/pods/). Indeed, we could use docker's public hub to pull a sample AspNetCore image. We want to make you more familier with what an image registry is. So we create a sample "private image resitry" in the docker.
 
 Stpes to run an AspNet Core app in kubernetes.
 
